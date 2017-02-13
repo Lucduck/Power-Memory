@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Power Memory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #333333;
+            font-family : 'Roboto', sans-serif;
+        }
+		#turn{
+			width:100%;
+			height:100%;
+			position:fixed;
+			top:0px;
+			left:0px;
+			background-color:black;
+			background-image:url('assets/sprites/playlandscape.png');
+			background-repeat:no-repeat;
+			background-size: 100% auto;
+			background-position: center center;
+			display: none;
+		}
+    </style>
+</head>
+
+<body>
+    
+    <div id="turn"></div>
+    <div id="content"></div>
+    <script src="dist/vendor.bundle.js"></script>
+    <script src="dist/bundle.js"></script>
+
+</body>
+
+</html>
