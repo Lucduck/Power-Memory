@@ -7,6 +7,7 @@ export default class extends Phaser.State {
     this.fontsReady = false
     this.fontsLoaded = this.fontsLoaded.bind(this)
 
+    this.game.windowBlock = false
     this.game.typeGame = 2
     this.game.soundActivated = true
   }
@@ -74,12 +75,14 @@ export default class extends Phaser.State {
   handleIncorrect () {
     if (!window.game.device.desktop) {
       document.getElementById('turn').style.display = 'block'
+      this.game.windowBlock = true
     }
   }
 
   handleCorrect () {
     if (!window.game.device.desktop) {
       document.getElementById('turn').style.display = 'none'
+      this.game.windowBlock = false
     }
   }
 }

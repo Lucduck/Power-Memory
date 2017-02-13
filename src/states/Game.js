@@ -60,10 +60,12 @@ export default class extends Phaser.State {
   }
 
   decreaseTime () {
-    this.game.timeLeft--
-    this.game.timeText.text = `TIME\n ${this.game.timeLeft}`
-    if (this.game.timeLeft === 0) {
-      this.game.state.start('GameOver', true, false, this.game.score)
+    if (!this.game.windowBlock) {
+      this.game.timeLeft--
+      this.game.timeText.text = `TIME\n ${this.game.timeLeft}`
+      if (this.game.timeLeft === 0) {
+        this.game.state.start('GameOver', true, false, this.game.score)
+      }
     }
   }
 }
