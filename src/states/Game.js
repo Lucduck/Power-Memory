@@ -60,7 +60,9 @@ export default class extends Phaser.State {
   }
 
   decreaseTime () {
+      console.log(this.game.timeLeft)
     if (!this.game.windowBlock) {
+      console.log(this.game.timeLeft)
       this.game.timeLeft--
       this.game.timeText.text = `TIME\n ${this.game.timeLeft}`
       if (this.game.timeLeft === 0) {

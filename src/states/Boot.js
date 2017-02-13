@@ -78,6 +78,7 @@ export default class extends Phaser.State {
     if (!window.game.device.desktop) {
       document.getElementById('turn').style.display = 'block'
       this.game.windowBlock = true
+      console.log("true")
     }
   }
 
@@ -85,6 +86,7 @@ export default class extends Phaser.State {
     if (!window.game.device.desktop) {
       document.getElementById('turn').style.display = 'none'
       this.game.windowBlock = false
+      console.log("false")
     }
   }
 }
