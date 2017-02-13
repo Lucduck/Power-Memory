@@ -12,7 +12,7 @@ export default class extends Phaser.State {
 
   create () {
     this.game.score = 0
-    this.game.timeLeft = 10
+    this.game.timeLeft = 60
 
     this.game.background = new Background({
       game: this.game,
@@ -30,13 +30,21 @@ export default class extends Phaser.State {
       plusTime: this.plusTime
     })
 
+    let backgroundScore = this.game.add.sprite(110, 85, 'textPoints')
+    backgroundScore.width = 200
+    backgroundScore.height = 150
+
+    let backgroundTime = this.game.add.sprite(this.game.width - 110, 85, 'textPoints')
+    backgroundTime.width = 200
+    backgroundTime.height = 150
+
     this.game.scoreText = this.game.add.text(110, 92, `SCORE\n ${this.game.score}`, this.game.customStyle)
     this.game.scoreText.lineSpacing = 7
 
     this.game.timeText = this.game.add.text(this.game.width - 110, 92, `TIME\n ${this.game.timeLeft}`, this.game.customStyle)
     this.game.timeText.lineSpacing = 7
 
-    centerGameObjects([this.game.scoreText, this.game.timeText])
+    centerGameObjects([this.game.scoreText, this.game.timeText, backgroundScore, backgroundTime])
 
     this.game.time.events.loop(Phaser.Timer.SECOND, this.decreaseTime)
   }
