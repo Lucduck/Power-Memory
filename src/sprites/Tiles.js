@@ -26,7 +26,6 @@ export default class extends Phaser.Sprite {
     this.tileSpacing = 10
     this.tilesArray = []
     this.selectedArray = []
-    this.tilesLeft = this.numRows * this.numCols
 
     this.sounds = {
       select: this.game.add.audio('select'),
@@ -41,6 +40,7 @@ export default class extends Phaser.Sprite {
     let leftSpace = this.calculateSpace(this.game.width, this.numCols)
     let topSpace = this.calculateSpace(this.game.height, this.numRows)
     let tileSpace = this.tileSize + this.tileSpacing
+    this.tilesLeft = this.numRows * this.numCols
 
     if (this.game.typeGame === 3) { // X3
       topSpace += 80
